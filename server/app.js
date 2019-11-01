@@ -19,7 +19,9 @@ app.use(compression());
 app.use(bodyParser.urlencoded({
   extended: true,
 }));
-app.engine('handlebars', expressHandlebars());
+app.engine('handlebars', expressHandlebars({
+  defaultLayout: '',
+}));
 app.set('view engine', 'handlebars');
 app.set('views', `${__dirname}/../views`);
 app.disable('x-powered-by');
